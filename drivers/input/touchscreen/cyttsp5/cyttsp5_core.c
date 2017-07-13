@@ -6474,7 +6474,7 @@ static void cyttsp5_switchCPU_work_func(struct work_struct *work)
 //htc--
 //htc++: turn off fb_notifier, incell panel will trigger suspend/resume
 //       by display please check htc_cyttsp5_drv_pm_ops()
-#if HTC_FOLOW_CONFIG_FB_AND_PM_SLEEP_AND_PM_RUNTIME
+#ifdef HTC_FOLOW_CONFIG_FB_AND_PM_SLEEP_AND_PM_RUNTIME
 //vendor original codes
 static int fb_notifier_callback(struct notifier_block *self,
 		unsigned long event, void *data)
@@ -6777,7 +6777,7 @@ int cyttsp5_probe(const struct cyttsp5_bus_ops *ops, struct device *dev,
 #elif defined(CONFIG_FB)
 //htc++: turn off fb_notifier, incell panel will trigger suspend/resume
 //       by display please check htc_cyttsp5_drv_pm_ops()
-#if HTC_FOLOW_CONFIG_FB_AND_PM_SLEEP_AND_PM_RUNTIME
+#ifdef HTC_FOLOW_CONFIG_FB_AND_PM_SLEEP_AND_PM_RUNTIME
 //vendor original codes
 	cyttsp5_setup_fb_notifier(cd);
 #endif

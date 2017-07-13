@@ -66,11 +66,6 @@
 #include <linux/htc_flags.h> //htc_get_bootmode()
 //#include <linux/htc_lcm_id.h> //htc_get_lcm_id()
 
-//htc: for incell project, driver will turn off
-//     CONFIG_FB, CONFG_PM_SLEEP and CONFG_PM_RUNTIME
-//     Turn on in OCN project.
-#define HTC_FOLOW_CONFIG_FB_AND_PM_SLEEP_AND_PM_RUNTIME (1)
-
 //#include <mt_gpio.h>
 #ifdef CONFIG_TOUCHSCREEN_MTK
 #include "tpd.h"
@@ -1029,7 +1024,7 @@ struct cyttsp5_features {
 };
 
 //htc+
-#if HTC_FOLOW_CONFIG_FB_AND_PM_SLEEP_AND_PM_RUNTIME
+#ifdef HTC_FOLOW_CONFIG_FB_AND_PM_SLEEP_AND_PM_RUNTIME
 //vendor original codes
 #define NEED_SUSPEND_NOTIFIER \
 	((LINUX_VERSION_CODE < KERNEL_VERSION(3, 3, 0)) \

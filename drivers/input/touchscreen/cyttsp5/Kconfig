@@ -71,3 +71,7 @@ config TOUCHSCREEN_CYPRESS_CYTTSP5_DEBUG_MDL
 	bool "Parade TrueTouch Gen5 MultiTouch Debug Module"
 	default n 
 
+config TOUCHSCREEN_CYPRESS_CYTTSP5_HTC_POWER_MANAGEMENT
+	bool "Use HTC power management"
+	default n
+
